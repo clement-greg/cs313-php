@@ -1,0 +1,26 @@
+div {
+    padding: 20px;
+}
+
+#div1 {
+    background-color: orange;
+    margin-bottom: 30px;
+}
+
+#div1:hover,
+#div2:hover,
+#div3:hover {
+    font-weight: bold;
+}
+
+#div2 {
+    background-color: red;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+
+#div3 {
+    background-color: rgba(0, 0, 0, .1);
+    color: blue;
+}
