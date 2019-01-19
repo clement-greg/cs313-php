@@ -1,43 +1,11 @@
+html,
+body {
+    height: 100%;
+}
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
-.home-static {
-    position: relative;
-    height: 100vh;
-    background-image: url(../images/bg1.jpg);
-}
-
-.section-back-image {
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-}
-
-
-
-body {
     font-family: 'Cousine', sans-serif;
     color: #93989B;
     overflow-x: hidden;
@@ -49,9 +17,17 @@ body {
     box-sizing: border-box;
 }
 
-html,
-body {
-    height: 100%;
+
+.home-static {
+    position: relative;
+    height: 100vh;
+    background-image: url(../images/bg1.jpg);
+}
+
+.section-back-image {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 h1,
@@ -2457,7 +2433,7 @@ div[flex] {
     animation-name: fadeInUpSmall;
 }
 
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 
 #aboutFlex .about-single {
     flex: 1;
@@ -2583,4 +2559,76 @@ section.section-padding {
 
 .btn-home-slider.small {
     padding: 6px 20px;
+}
+
+.footer-container {
+    border-top: 1px solid #fff; text-align: center; margin-top: 40px; padding-top: 20px;
+}
+
+.height-100 {
+    height: 100px;
+}
+
+.height-150 {
+    height: 150px;
+}
+
+.height-25 {
+    height: 25px;
+}
+
+.margin-top-neg-50 {
+    margin-top: -50px
+}
+
+.fade-in-up {
+    visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInUp;
+}
+
+.fade-in-left {
+    visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInLeft;
+}
+
+.fade-in-right {
+    visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInRight;
+}
+
+.section-projects {
+    background-image: url('/images/bg2.jpg');
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.min-height {
+   min-height:  600px;
+}
+
+.connect-section {
+    background-image: url('/images/IMG_2034_Edit.jpg');min-height: 500px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex1 {
+    flex: 1
+}
+
+.text-right {
+    text-align: right;
+}
+
+.flex-none {
+    flex: none;
+}
+
+.margin-top-30 {
+    margin-top: 30px;
+}
+
+#server-time {
+    color: #fff;
 }

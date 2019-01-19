@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cousine:400,700|Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="/css/bootstrap.css" rel="stylesheet" />
     <link href="/css/site.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body data-spy="scroll">
@@ -51,31 +52,28 @@
     </nav>
 
 
-<section id="home" class="home-static section-back-image" style="margin-top: -50px">
+<section id="home" class="home-static section-back-image margin-top-neg-50">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="home-static-text text-center">
-                    <h2 data-wow-delay="0.5s" data-wow-duration="1s" class="wow fadeInLeft" style="visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInLeft;">Greg Clement</h2>
-                    <p data-wow-delay="0.5s" data-wow-duration="1s" class="wow fadeInRight" style="visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInRight;">
-                        <img src="/images/gregclement.jpg" style="height: 150px" />
+                    <h2 data-wow-delay="0.5s" data-wow-duration="1s" class="wow fadeInLeft fade-in-left">Greg Clement</h2>
+                    <p data-wow-delay="0.5s" data-wow-duration="1s" class="wow fadeInRight fade-in-right">
+                        <img src="/images/gregclement.jpg" class="height-150" />
                     </p>
 
                     <p>Welcome to my home page for CS 313 - Web Engineering II<br>
                    
-                    <a data-wow-delay="0.5s" data-wow-duration="1s" class="btn-home-slider page-scroll wow fadeInUp" href="menu.php" style="visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInUp;">Site Menu</a>
+                    <a data-wow-delay="0.5s" data-wow-duration="1s" class="btn-home-slider page-scroll wow fadeInUp fade-in-up" href="menu.php">Site Menu</a>
+
+                    <p>
+    The time on the server is: <h1 id="server-time"></h1>
+</p>
                 </p>
-                    <p data-wow-delay="0.5s" data-wow-duration="1s" class="wow fadeInLeft" style="visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInRight;">
+                    <p data-wow-delay="0.5s" data-wow-duration="1s" class="wow fadeInLeft fade-in-right" >
                         I write code, and I love it. I'm a full-stack software developer with twenty years creating solutions that increase user satisfaction and drive business productivity. I love engaging with smaller organizations focused on nimbly delivering innovative solutions to the ever-changing business landscape.
 
                     </p>
-                    <p data-wow-delay="0.5s" data-wow-duration="1s" class="wow fadeInLeft" style="visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInRight;">
-
-                        I've worked on many technology stacks over the years. These days I spend my time working in Angular/JavaScript/HTML5/CSS3 on the front end, and C#/SQL Server for the back end. But I love to witness and participate in the creative disruption that new technology brings to the market place. I have a solid track record of aligning my skills to the needs of the business as we grow and develop together.
-                    </p>
-
-
-
                 </div>
             </div>
         </div>
@@ -95,7 +93,7 @@
             </div>
 
             <div flex id="aboutFlex">
-                <div class="about-single wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInUp;">
+                <div class="about-single wow fadeInUp fade-in-up" data-wow-delay="0.5s" data-wow-duration="1s" >
                     <div class="icon">
                         <span><i class="fa fa-chrome" aria-hidden="true"></i></span>
                     </div>
@@ -105,7 +103,7 @@
                         With HTML5 adoption, the platform has matured to rival just about any competitor.
                     </p>
                 </div>
-                <div class="about-single  wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInUp;">
+                <div class="about-single  wow fadeInUp fade-in-up" data-wow-delay="0.5s" data-wow-duration="1s" >
                     <div class="icon">
                         <span><i class="fa fa-mobile" aria-hidden="true"></i></span>
                     </div>
@@ -115,7 +113,7 @@
                         It would seem in the near term, the biggest constraint of innovation is in the imagination technologist to envision new and exciting uses for the technology readily available.
                     </p>
                 </div>
-                <div class="about-single wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInUp;">
+                <div class="about-single wow fadeInUp fade-in-up" data-wow-delay="0.5s" data-wow-duration="1s" >
                     <div class="icon">
                         <span><i class="fa fa-cloud-upload" aria-hidden="true"></i></span>
                     </div>
@@ -125,7 +123,7 @@
 
                     </p>
                 </div>
-                <div class="about-single wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInUp;">
+                <div class="about-single wow fadeInUp fade-in-up" data-wow-delay="0.5s" data-wow-duration="1s" >
                     <div class="icon">
                         <span><i class="fa fa-database" aria-hidden="true"></i></span>
                     </div>
@@ -139,7 +137,7 @@
     </div>
 
 </section>
-<section id="projects" class="section-padding section-back-image" style="background-image: url('/images/bg2.jpg');">
+<section id="projects" class="section-padding section-back-image section-projects">
     <div class="container">
         <div class="row text-center">
             <div class="section-title">
@@ -150,14 +148,7 @@
 
             <div flex>
 
-                <div class="services" style="flex:1; display: flex; flex-direction: column">
-
-                    
-
-
-                </div>
-
-                <div class="services" style="flex:1">
+                <div class="services flex1" >
                     <div class="icon">
                         <span><i class="fa fa-fire" aria-hidden="true"></i></span>
                     </div>
@@ -166,12 +157,12 @@
                     <p>
                         This was a project that was both a web application and a mobile application for Android and iOS for customers of OneGurd Home Warranties to access warranty information and submit claims.
                     </p>
-                    <div style="margin-top: 30px; text-align: right">
+                    <div class="text-right margin-top-30">
                         <a href="https://play.google.com/store/apps/details?id=net.oneguard.customerportal" target="_blank">
-                            <img src="/images/google-play.png" style="height: 25px" />
+                            <img src="/images/google-play.png" class="height-25" />
                         </a>
                         <a href="https://itunes.apple.com/us/app/oneguard-homeowners/id1397571409?mt=8" target="_blank">
-                            <img src="/images/ios-app-store.png" style="height: 25px" />
+                            <img src="/images/ios-app-store.png" class="height-25" />
                         </a>&nbsp;&nbsp;
                         <a class="btn-home-slider small" target="_blank" href="https://homeowners.oneguardhomewarranty.com/log-in">
                             <div class="flex-container">
@@ -191,8 +182,8 @@
                 </div>
 
 
-                <div class="services" style="flex:1; display: flex; flex-direction: column">
-                    <div style="flex: 1">
+                <div class="services flex1 flex flex-column">
+                    <div class="flex1">
                         <div class="icon">
                             <span><i class="fa fa-user-secret" aria-hidden="true"></i></span>
                         </div>
@@ -200,7 +191,7 @@
                         <span></span>
                         <p>This is a project where I am re-writing the entire application front-end using angular as a single page application.</p>
                     </div>
-                    <div style="flex: none; text-align: right">
+                    <div class="flex-none text-right" >
                         <a class="btn-home-slider small" target="_blank" href="https://wm-ahs.azurewebsites.net/">
                             <div class="flex-container">
                                 <div>
@@ -227,7 +218,7 @@
 
 </section>
 
-<section id="stories" class="section-padding" style="min-height: 600px">
+<section id="stories" class="section-padding min-height-600">
     <div class="container">
         <div class="row text-center">
             <div class="section-title">
@@ -363,7 +354,7 @@
 
 </section>
 
-<section id="contact" class="contact-area section-padding section-back-image" style="background-image: url('/images/IMG_2034_Edit.jpg');min-height: 500px">
+<section id="contact" class="contact-area section-padding section-back-image connect-section">
     <div class="container">
         <div class="row">
             <div class="section-title text-center">
@@ -375,7 +366,7 @@
 
             
 
-            <div class="col-md-12 col-xs-12 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInRight; text-align: center; ">
+            <div class="col-md-12 col-xs-12 wow fadeInRight fade-in-right" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 
                 <div class="text-center clearfix">
                     <div class="row">
@@ -404,9 +395,9 @@
         <div class="container">
 
 
-            <div style="border-top: 1px solid #fff; text-align: center; margin-top: 40px; padding-top: 20px">
+            <div class="footer-container">
 
-                <img src="/images/logo.png" style="height: 100px" />
+                <img src="/images/logo.png" class="height-100" />
                 <p>Copyright 2018 - Greg Clement.  All Rights Reserved.</p>
             </div>
         </div>

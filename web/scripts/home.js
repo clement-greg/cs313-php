@@ -26,6 +26,19 @@
 
 
     }); new WOW().init();
+
+    setInterval(function() {
+        $.ajax({
+            url: '/date-service.php',
+            type: 'GET',
+            success: function(result) {
+
+                var dateObject = JSON.parse(result);
+
+                document.getElementById('server-time').innerText  = dateObject.date;
+            },
+        })
+    }, 1000);
 })(jQuery);
 
 $(function () {
