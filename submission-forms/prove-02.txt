@@ -1,0 +1,43 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+https://secret-wildwood-23194.herokuapp.com/
+
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+https://github.com/clement-greg/cs313-php
+
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+There is a home page with biographical information about me.  There is a link to a menu page that simply shows a coming soon message.  No special instructions. 
+The home page makes a call to a PHP service that returns the current time on the server. The time should update every second.
+
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+Everything should be working as expected.
+
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+I found creating objects and returning JSON in PHP to be incredibly simple.  
+
+6. What is the difference between an HTTP Get and Post? When should each be used?
+A GET request is primarily used to return data from the server to display on the client.  A get request tends to be the most commonly used HTTP verb.
+Most of the resources used in constructing a web page (such as the HTML, JavaScript, CSS, images etc. ) are retrieved using GET requests.
+
+A POST request is used when data needs to be sent from the client to the server, usually that data is then persisted on the server.  A typical example 
+might be a contact submission form.  The data is collected on the client through html input controls and then posted to the server.  The server can then 
+process that data in what ever way it deems necessary.
+
+
+7. Please select the category you feel best describes your assignment:
+1 - Some attempt was made
+2 - Developing, but significantly deficient
+3 - Slightly deficient, but still mostly adequate
+4 - Meets requirements
+5 - Shows creativity and excels above and beyond requirements
+
+5
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+I spent a good deal of time forming the content for my home page and the menu page.  
