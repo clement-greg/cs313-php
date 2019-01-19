@@ -22,7 +22,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a  href="#home" class="navbar-brand page-scroll">
-                    <img src="/Images/logo.png" alt="Home Warranty" title="Home Warranty">
+                    <img src="/images/logo.png" alt="Home Warranty" title="Home Warranty">
                 </a>
             </div>
             <div class="navbar-collapse collapse" id="nav-main">
@@ -383,13 +383,13 @@
                     </div>
                     <div>
                         <a href="https://www.facebook.com/GregBClement">
-                            <img src="/Images/facebook.svg" class="social" />
+                            <img src="/images/facebook.svg" class="social" />
                         </a>
                         <a href="https://twitter.com/gregb_clement?lang=en">
-                            <img src="/Images/twitter.svg" class="social" />
+                            <img src="/images/twitter.svg" class="social" />
                         </a>
                         <a href="https://www.youtube.com/channel/UCGFOlm8Vgj-t8iFPKwcEQ5A?view_as=subscriber" target="_blank">
-                            <img src="/Images/youtube.svg" class="social" />
+                            <img src="/images/youtube.svg" class="social" />
                         </a>
                         <a href="https://www.linkedin.com/in/greg-clement-a91401a1/" target="_blank">
                             <img src="/images/linkedin.png" class="social" />
