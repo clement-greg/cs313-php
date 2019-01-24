@@ -2404,8 +2404,45 @@ footer a:visited {
     }
 }
 
-div[flex] {
+div[flex],
+div.flex-container {
     display: flex;
+}
+
+.flex-container>div {
+    flex: auto;
+}
+
+.flex-container>.flex1,
+.table-row>.flex1,
+.table-header>.flex1,
+.table-footer>.flex1 {
+    flex: 1;
+}
+
+.flex-container>.flex2,
+.table-row>.flex2,
+.table-header>.flex2,
+.table-footer>.flex2 {
+    flex: 2;
+}
+
+.flex-container>.flex3,
+.table-row>.flex3,
+.table-header>.flex3,
+.table-footer>.flex3 {
+    flex: 3;
+}
+
+.flex-container>.flex-none,
+.table-row>.flex-none,
+.table-header>.flex-none,
+.table-footer>.flex-none {
+    flex: none;
+}
+
+div.no-grow {
+    flex: none;
 }
 
 @media only screen and (max-width : 480px) {
@@ -2562,7 +2599,10 @@ section.section-padding {
 }
 
 .footer-container {
-    border-top: 1px solid #fff; text-align: center; margin-top: 40px; padding-top: 20px;
+    border-top: 1px solid #fff;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
 }
 
 .height-100 {
@@ -2582,15 +2622,24 @@ section.section-padding {
 }
 
 .fade-in-up {
-    visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInUp;
+    visibility: visible;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    animation-name: fadeInUp;
 }
 
 .fade-in-left {
-    visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInLeft;
+    visibility: visible;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    animation-name: fadeInLeft;
 }
 
 .fade-in-right {
-    visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInRight;
+    visibility: visible;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    animation-name: fadeInRight;
 }
 
 .section-projects {
@@ -2602,11 +2651,12 @@ section.section-padding {
 }
 
 .min-height {
-   min-height:  600px;
+    min-height: 600px;
 }
 
 .connect-section {
-    background-image: url('/images/IMG_2034_Edit.jpg');min-height: 500px;
+    background-image: url('/images/IMG_2034_Edit.jpg');
+    min-height: 500px;
 }
 
 .flex {

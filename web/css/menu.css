@@ -5,6 +5,8 @@ body {
 .center {
     display: table;
     margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
 }
 
 h1 {
@@ -14,4 +16,43 @@ h1 {
     text-transform: uppercase;
     font-weight: 100;
     font-size: 44px;
+}
+
+.menu-item {
+    font-family: 'Titillium Web', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+    padding: 10px 5px;
+    transition: all .5s ease-out;
+
+}
+
+.menu-item:hover {
+    background-color: rgba(255,255,0,.3);
+    color: #fff;
+}
+
+.menu-item h3 {
+    font-size: 24px;
+    margin: 0;
+    color: #fff;
+    font-weight: 100;
+}
+
+.menu-item i {
+    font-size: 52px;
+}
+
+.menu-item p {
+margin: 0;
+}
+
+.menu-icon {
+    text-align: center;
+    display: table;
+    margin: 0 auto;
+    border-radius: 100%;
+    height: 160px;
 }
