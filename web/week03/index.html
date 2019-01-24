@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Outdoors Inc Shopping</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="css/shopping.css" rel="stylesheet" />
+</head>
+<body onload="uiOptions.initializeForm()">
+    
+    <div class="header-bar">
+        <div class="container">
+            <div layout="row">
+                <div flex="nogrow">
+                    <a href="#select">
+                        <img src="../images/logo-white.png" style="height: 64px" />
+                    </a>
+                </div>
+                <div>
+                    <h1>Get Outdoors Inc.</h1>
+                    <h3>Come Shop with Us</h3>
+                </div>
+                <div flex="nogrow">
+                    <button class="link-button" onclick="uiOptions.advanceWizard(1)" style="color: #fff; text-transform: none">
+                        <img src="../images/shopping-white.png" style="height: 36px" id="cart-icon" />
+                        <br />
+                        <span>Cart (<span id="cartCount">0</span>)</span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top: 110px">
+        <div class="order-slider-container">
+            <!-- Step to show the catalog of items for sale -->
+            <div class="slide wizard-slide">
+                <div style="padding-right: 80px">
+                    <div style="height: 355px">
+                        <!--I usually use a pre-built slider control, but since we have to build from scratch, this is my quick and dirty implementation -->
+                        <div class="slider-wraper">
+                            <div class="slider-container" id="highlightedSliderContainer">
+                                <!--Slides will be dynamically added here -->
+                            </div>
+                        </div>
+                    </div>
+                    <button class="button slider-button" onclick="uiOptions.retreatSlider()">&lt;</button>
+                    <button class="button slider-button right" id="leftSliderButton" style="margin-left: 1102px" onclick="uiOptions.advanceSlider()">&gt;</button>
+
+                    <div style="display: flex; flex-wrap: wrap" id="productCatalog">
+                        <!--Products will be dynamically loaded here-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step to show the contents of the shopping cart -->
+            <div class="slide wizard-slide no-show">
+                <div style="padding-right: 160px; margin-left: -76px">
+
+                    <div layout="row">
+                        <div class="card" style="width: calc(100% - 320px)">
+                            <ul class="list-group" id="shoppingCartList">
+                                <!--Shopping cart items populate here-->
+                            </ul>
+                            <div class="card-content" id="noItemsInCart">
+                                <h1>Looks like there isn't anything in your cart.</h1>
+                                <button class="button" onclick="uiOptions.advanceWizard(0)">Order Something</button>
+                            </div>
+                        </div>
+                        <div flex="nogrow" class="card" style="min-width: 250px">
+                            <div class="card-content">
+                                <div layout="row">
+                                    <div flex>Subtotal</div>
+                                    <div flex="nogrow" id="subtotal"></div>
+                                </div>
+                                <div layout="row">
+                                    <div flex>Shipping</div>
+                                    <div flex="nogrow" id="shipping"></div>
+                                </div>
+
+                                <div layout="row">
+                                    <div flex>Tax</div>
+                                    <div flex="nogrow" id="tax"></div>
+                                </div>
+                                <h3>Order Total</h3>
+                                <h1 style="display: table; margin:0 auto" id="total"></h1>
+                                <button class="button block" id="checkOutButton" onclick="uiOptions.advanceWizard(2)" style="margin-top: 20px">
+                                    Check Out
+                                    <img src="../images/chevron-right.png" style="height: 18px" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="link-button" onclick="uiOptions.advanceWizard(0)">
+                        &lt;
+                        Order More
+                    </button>
+
+                    <button class="link-button" onclick="uiOptions.clearShoppingCart()">
+                        <img src="../images/clear-cart.png" style="height: 20px" />
+                        Clear Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step to show name, address and payment information -->
+            <div class="slide wizard-slide no-show">
+                <div style="margin-left: -156px; padding-right: 240px">
+                    <div layout="row">
+                        <div flex class="card">
+                            <div class="card-content clear-fix">
+                                <form id="orderForm" name="orderForm">
+                                    <h3>Customer Information</h3>
+
+                                    <div style="display: flex">
+                                        <div class="input-group" style="flex: 1">
+                                            <label for="customerName">First Name * <span class="validation-error" id="customerNameValidationErrorLabel"> - First Name is required</span></label>
+                                            <input type="text" id="customerName" oninput="uiOptions.validateName()" onblur="uiOptions.validateName()" />
+                                        </div>
+                                        <div class="input-group" style="flex: 1">
+                                            <label for="customerLastName">Last Name * <span class="validation-error" id="customerLastNameValidationErrorLabel"> - Last Name is required</span></label>
+                                            <input type="text" id="customerLastName" oninput="uiOptions.validateLastName()" onblur="uiOptions.validateLastName()" />
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="address1">Address * <span class="validation-error" id="addressValidationErrorLabel"> - Address is required</span></label>
+                                        <input type="text" oninput="uiOptions.validateAddress()" id="address1" onblur="uiOptions.validateAddress()" />
+
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="address2">Address 2</label>
+                                        <input type="text" id="address2" />
+                                    </div>
+
+
+                                    <div style="display: flex" class="input-group">
+
+                                        <div style="width: 30%">
+                                            <label for="postalCode">Postal Code * <span class="validation-error" id="postalCodeValidationErrorLabel"> - Required</span></label>
+                                            <input id="postalCode" type="text" oninput="uiOptions.zipCodeInput()" onblur="uiOptions.validatePostalCode()" />
+                                        </div>
+                                        <div style="width: 50%;padding-left: 10px; padding-right: 10px">
+                                            <label for="city">City * <span class="validation-error" id="cityValidationErrorLabel"> - City is required</span></label>
+                                            <input type="text" id="city" oninput="uiOptions.validateCity()" onblur="uiOptions.validateCity()" />
+                                        </div>
+
+                                        <div style="width: 20%;">
+                                            <label for="states">State</label>
+                                            <select id="states"></select>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex" class="input-group">
+                                        <div style="width: 50%">
+                                            <label for="phone">Phone Number * <span class="validation-error" id="phoneValidationErrorLabel"> - Required</span></label>
+                                            <input id="phone" type="text" oninput="uiOptions.preValidatePhoneNumber()" onblur="uiOptions.validatePhone()" />
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="button">Complete Order</button>
+                                    <button class="link-button pull-right" type="button" onclick="uiOptions.resetForm()"><img src="../images/reset-icon.png" style="height: 20px" /> Reset</button>
+                                </form>
+
+
+                                <p style="font-style:italic; font-size: 11px">* Indicates a required field</p>
+                            </div>
+                        </div>
+                        <div flex="nogrow" class="card" style="width: 300px">
+                            <div class="card-content">
+                                <ul class="list-group" id="finalStepCartList">
+                                    <!-- Shopping cart items will be inserted here -->
+                                </ul>
+
+                                <div layout="row">
+                                    <div flex>Subtotal</div>
+                                    <div flex="nogrow" id="subtotal2"></div>
+                                </div>
+                                <div layout="row">
+                                    <div flex>Shipping</div>
+                                    <div flex="nogrow" id="shipping2"></div>
+                                </div>
+
+                                <div layout="row">
+                                    <div flex>Tax</div>
+                                    <div flex="nogrow" id="tax2"></div>
+                                </div>
+                                <h3>Order Total</h3>
+                                <h1 id="total2" style="display: table; margin:0 auto"></h1>
+
+                                <button class="link-button" onclick="uiOptions.advanceWizard(1)" style="display: block; margin-top: 20px">
+                                    &lt;
+                                    Edit Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step to show completion of the order -->
+            <div class="slide wizard-slide no-show">
+                <div style="margin-left: -236px; padding-right: 320px; margin-top: 30px">
+
+                    <div layout="row">
+                        <div flex="nogrow">
+                            <img src="../images/thank-you-bubble.png" />
+
+                        </div>
+                        <div flex style="padding-left: 20px">
+                            <h1 style="margin-bottom: 0">We have received your order</h1>
+                            <p style="color: rgba(0,0,0,.5)">The gears are in motion and we will have your order to you before you can say 'Appalachian Trail'</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="/menu.php" class="back-button" style="margin-top: 30px">CS 313 Assignments</a>
+    </div>
+
+    <script type="text/html" id="catalogItem">
+        <div style="width: 50%; margin-bottom: 30px">
+            <div class="card" style="min-height: 100%">
+                <div class="card-content">
+                    <div style="display: flex;">
+                        <div style="width: calc(100% - 150px)">
+                            <div class="md-headline">{{item.name}}</div>
+                            <div class="md-subhead">{{item.description}}</div>
+                            <div style="margin-top: 20px">
+                                Your Price: ${{item.price}}
+                            </div>
+                        </div>
+                        <div style="width: 140px">
+                            <img src="catalog_images/{{item.sku}}.png" style="max-width: 100%" />
+                        </div>
+                    </div>
+                    <div style="text-align: right">
+                        <img src="catalog_images/{{item.sku}}.png" style="display: none" class="animate-picture" />
+                        <button class="link-button" onclick="uiOptions.addItemToCart(event)">
+                            <img src="../images/shopping.png" style="height: 22px" />
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/html" id="sliderTemplate">
+        <div class="slide" style="background-image: url('bg_images/{{item.bgImage}}'); background-size: cover;" index="$index">
+
+            <div style="max-width : 800px; width: 800px; display: table; margin: 0 auto; margin-top: 40px; overflow: hidden; ">
+
+                <div layout="row">
+                    <div flex="nogrow" style="background-color: #fff; border: 1px solid #056cb6; border-radius: 100%; max-width: 250px">
+
+                        <img src="catalog_images/{{item.sku}}.png" style="margin:auto; height: 250px; width: 250px; border-radius: 100%">
+                    </div>
+                    <div style="padding-left: 20px">
+                        <img src="catalog_images/{{item.sku}}.png" style="display: none" class="animate-picture" />
+                        <h2 style="color: #fff; font-weight: bold; text-shadow: 2px 2px #333333;">{{item.name}}</h2>
+                        <p style="text-shadow: 1px 1px #333333;">{{item.description}} Only ${{item.price}}.</p>
+
+                        <button class="button button-default" onclick="uiOptions.addItemToCart(event)">
+                            <img src="../images/shopping.png" style="height: 22px" />
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/html" id="shoppingCartItemTemplate">
+        <li class="list-group-item rubber-band">
+            <div layout="row">
+                <div flex="nogrow">
+                    <img src="catalog_images/{{cartItem.sku}}.png" class="thumbnail" />
+                </div>
+                <div>
+                    <h3> {{cartItem.name}} </h3>
+                    <p> {{cartItem.price}} </p>
+                </div>
+                <div flex="nogrow">
+                    <button class="link-button" onclick="uiOptions.removeItem(event)">
+                        X
+                    </button>
+                </div>
+            </div>
+        </li>
+    </script>
+
+    <script type="text/html" id="finalStepShoppingCartTemplate">
+        <li class="list-group-item">
+            <div layout="row">
+                <div flex="nogrow">
+                    <img src="catalog_images/{{cartItem.sku}}.png" style="max-width: 50px" />
+                </div>
+                <div class="md-list-item-text">
+                    <h3> {{cartItem.name}} </h3>
+                    <p> {{cartItem.price}} </p>
+                </div>
+            </div>
+        </li>
+    </script>
+
+    <script src="app.js"></script>
+</body>
+</html>

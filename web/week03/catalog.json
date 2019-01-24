@@ -1,0 +1,52 @@
+﻿{
+  "items": [
+    {
+      "name": "The North Face Kaiju Four-Person Tent",
+      "description": "With its roomy interior height and easy-pitch, three-pole design, The North Face Kaiju Four-Person Tent meets the needs of campers who want convenience and all the technical advantages to be found in a North Face design. ",
+      "price": 112.99,
+      "shipping": 7,
+      "sku": "IK-581089",
+      "highlight": true,
+      "bgImage": "prairie.jpg"
+    }, 
+    {
+      "name": "Cabela's Mountain Trapper 0°F Sleeping Bag",
+      "sku": "IK-582220",
+      "description": "Constructed to keep you warm through temperatures as low as 0°F, Cabela's Mountain Trapper Sleeping Bag is perfect for camping spring through fall. ",
+      "price": 104.99,
+      "shipping": 8,
+      "highlight": true,
+      "bgImage": "mountain.jpg"
+    },
+    {
+      "name": "Slumberjack Forest 0°F Sleeping Bag",
+      "sku": "IK-580793",
+      "description": "Durable construction with a draft tube along the anti-snag zipper to keep cold air out and warm air in. High-loft, heat-trapping Slumberloft™ synthetic insulation. ",
+      "price": 69.95,
+      "shipping": 5
+    },
+    {
+      "sku": "IK-270080",
+      "name": "Garmin® Rino 650 GPS Radio",
+      "price": 330.00,
+      "description": "With the navigational capabilities of a 12-parallel-channel GPS and the reliable communication power of a 22-channel GMRS/FRS radio, this 100% waterproof GPS/radio units let you travel anywhere with complete confidence.",
+      "shipping": 15,
+      "highlight": true,
+        "bgImage": "lake.jpg"
+    },
+    {
+      "sku": "IK-270138",
+      "price": 480,
+      "name": "Garmin® Oregon® 600T",
+      "description": "Simply tap your finger on the brightly colored, easy-to-read, 3\" touch-screen display and explore like never before. ",
+      "shipping": 7
+    },
+    {
+      "sku": "IK-552341",
+      "price": 139,
+      "name": "Landmann Patio Lights Deer Fire Pit",
+      "description": "Upgrade your patio or campsite with the unique ambiance of a flickering fire glowing through deer and track cutouts with Landmann's Patio Lights Deer Fire Pit. ",
+      "shipping": 20
+    }
+  ]
+}

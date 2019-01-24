@@ -1,0 +1,300 @@
+﻿body {
+    overflow-x: hidden;
+}
+.header-bar {
+    background-color: #056cb6;
+    padding: 0 0 20px 0;
+    border-bottom: 2px solid #697688;
+    -webkit-box-shadow: 0px 10px 10px -3px rgba(105,118,136,1);
+    -moz-box-shadow: 0px 10px 10px -3px rgba(105,118,136,1);
+    box-shadow: 0px 10px 10px -3px rgba(105,118,136,1);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.tools {
+    background-color: #fff;
+}
+
+.header-bar h1, .header-bar h2, .header-bar h3 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+.header-bar h3 {
+    font-style: italic;
+}
+
+.thumbnail {
+    max-height: 100px;
+    margin-bottom: 10px;
+}
+
+md-tabs-canvas {
+    display: none;
+}
+
+md-content.md-default-theme, md-content {
+    background-color: transparent;
+}
+
+.header-bar .container {
+    padding-top: 20px;
+}
+
+.animate-picture {
+    position: absolute;
+    max-height: 100px;
+    margin-top: 0px;
+    opacity: 1;
+    transition: all .75s ease-in-out;
+    z-index: 100;
+    transform: scale(.25);
+}
+
+.item-adding {
+    opacity: .5;
+    transform: scale(1);
+}
+
+.block {
+    display: block;
+    width: 100%;
+}
+
+.flex-50, .layout-column > .flex-50, .layout-row > .flex-50 {
+    flex: 1 1 48%;
+}
+
+.slider-wraper {
+    max-width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.order-slider-container {
+    transition: margin-left ease-in-out .5s;
+    display: flex;
+    width: 4960px;
+    align-items: stretch;
+    height: 100%;
+}
+
+
+.slider-container {
+    transition: margin-left ease-in-out .5s;
+    display: flex;
+    width: 3720px;
+    align-items: stretch;
+    height: 100%;
+}
+
+.slide {
+    width: 1240px;
+    height: 100%;
+    margin: 0;
+    color: #fff;
+}
+
+    .slide:first-child {
+        margin-left: 0;
+    }
+
+.not-selected {
+    color: #697688;
+}
+
+.item-selected {
+    color: #056cb6;
+}
+
+.md-headline {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    color: rgba(0,0,0,.6);
+}
+
+.md-subhead {
+    color: rgba(0,0,0,0.54);
+    padding-top: 0;
+    font-size: 14px;
+}
+
+button {
+    text-transform: uppercase;
+}
+
+    button i.material-icons {
+        font-size: 18px;
+    }
+
+.link-button {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+    .link-button:hover {
+        background-color: rgba(158,158,158,0.2);
+    }
+
+.order-slider-container .slide {
+    /*padding-left: 30px;
+                padding-right: 30px;*/
+}
+
+.wizard-slide {
+    height: auto;
+    max-height: 10000px;
+    transition: max-height ease-out .5s;
+}
+
+    .wizard-slide.no-show {
+        /*height:0;*/
+        max-height: 0;
+        overflow: hidden;
+    }
+
+
+div[layout=row] {
+    display: flex;
+    width: 100%;
+}
+
+    div[layout=row] > div {
+        flex: 1;
+    }
+
+        div[layout=row] > div[flex=nogrow] {
+            flex: none;
+        }
+
+.list-group {
+    padding: 0;
+}
+
+    .list-group .list-group-item {
+        list-style: none;
+        display: block;
+        padding: 10px;
+        margin-bottom: 1px solid rgba(0,0,0,0.54);
+    }
+
+.md-list-item-text {
+    overflow: hidden;
+}
+
+    .md-list-item-text h3 {
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+        text-overflow: ellipsis;
+    }
+
+.input-group {
+    padding: 5px;
+}
+
+    .input-group label {
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: rgba(0,0,0,0.54);
+    }
+
+div.input-group select {
+    padding-bottom: 9px;
+    margin-top: 3px;
+}
+
+
+/*I borrowed this animation from animate.css*/
+@keyframes zoomOutLeft {
+    40% {
+        opacity: 1;
+        -webkit-transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);
+        transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(.1) translate3d(-2000px, 0, 0);
+        transform: scale(.1) translate3d(-2000px, 0, 0);
+        -webkit-transform-origin: left center;
+        transform-origin: left center;
+    }
+}
+
+/*I borrowed this animation from animate.css*/
+@keyframes zoomInLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);
+        transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+        animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);
+        transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    }
+}
+
+.removing-item {
+    animation: zoomOutLeft .5s linear;
+}
+
+.adding-item {
+    animation: zoomInLeft .5s linear;
+}
+
+.card-content#noItemsInCart {
+    text-align: center;
+}
+
+.validation-error {
+    display: none;
+    color: #a61a1a;
+}
+
+.visible {
+    display: inline-block;
+}
+
+.slider-button {
+    background-color: transparent;
+    color: #fff;
+    height: 355px;
+    border: none;
+    box-shadow: none;
+    transition: background ease-in-out .5s;
+    font-size: 32px;
+    margin-top: -355px;
+    position: absolute;
+    outline: none;
+    border-radius: 0;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%);
+}
+
+.slider-button.right:hover {
+    background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%);
+}

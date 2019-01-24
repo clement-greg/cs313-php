@@ -14,6 +14,8 @@
 <div class="center">
     <h1>CS 313 Menu</h1>
 <img src="/images/coming-soon.png">
+
+<a href="/week03/index.html">Shopping Cart</a>
 </div>
 </body>
 </html>
