@@ -1,0 +1,39 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+https://secret-wildwood-23194.herokuapp.com/week03/index.html
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+https://github.com/clement-greg/cs313-php
+
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+There is a screen for selecting products, a screen for viewing/editing the shopping cart, a screen for checking out and a thank you screen when the process is complete.
+
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+Everything should be working as expected.
+
+
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+I learned how to use html templates stored in script tags to define html I wanted to dynamically bind to data.
+
+6. List one strength and one limitation of using cookies.
+Strength: You can persist information between page requests and event between visits to the site.
+Limitations: Some users may disable cookies which may break your site
+
+
+7. Please select the category you feel best describes your assignment:
+1 - Some attempt was made
+2 - Developing, but significantly deficient
+3 - Slightly deficient, but still mostly adequate
+4 - Meets requirements
+5 - Shows creativity and excels above and beyond requirements
+5
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+I think the shopping cart user experience is pretty good.  I also think the flow between screens is smooth.
+
+
