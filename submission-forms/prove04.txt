@@ -1,19 +1,20 @@
 After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
 
 1. Provide a link to your myDb.sql file at GitHub (the file that contains all the SQL commands needed to create your database).
-
+https://github.com/clement-greg/cs313-php/blob/master/db/myDb.sql
 
 2. Describe something from your database that you think came together very nicely.
+I think it is a relatively simple design that should still handle multiple users nicely
 
 
 3. Describe something from your database that you think could be improved or extended in the future.
-
+Support for logins
 
 4. Briefly describe the "coolest" thing you learned while completing this assignment.
-
+I learned a little more of PostgreSQL syntax.
 
 5. Briefly describe two principles of good database design.
-
+Database normalization - don't duplicate the storage of data.  Good database constraints - Setup good foreign keys to prevent bad data from being created.
 
 6. Please select the category you feel best describes your assignment:
 1 - Some attempt was made
@@ -21,6 +22,8 @@ After completing the assignment, please answer the questions in this text file a
 3 - Slightly deficient, but still mostly adequate
 4 - Meets requirements
 5 - Shows creativity and excels above and beyond requirements
+4
 
 
 7. Provide a brief justification (1-2 sentences) for selecting that category.
+It seems to meet the requirements, but there is really nothing all that fancy or complicated that I did with the table setup.
