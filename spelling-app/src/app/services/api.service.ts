@@ -10,17 +10,17 @@ import { SpellingWord } from '../models/spelling-word.model';
 })
 export class ApiService {
 
-  baseUrl = 'http://localhost:8000/project1/'
+  baseUrl = 'http://localhost:8000/project1/api/'
   constructor(private http: HttpClient) { }
 
 
   getStudents(): Observable<any> {
 
-    return this.http.get(this.baseUrl + 'students.php');
+    return this.http.get(this.baseUrl + 'get-students.php');
   }
 
   saveStudent(student: Student): Observable<any> {
-    return this.http.post(this.baseUrl + 'create-student.php', student);
+    return this.http.post(this.baseUrl + 'post-student.php', student);
   }
 
   getSpellingLists(studentId: string): Observable<any> {
@@ -36,6 +36,6 @@ export class ApiService {
   }
 
   saveSpellingWord(spellingWord: SpellingWord): Observable<any> {
-    return this.http.post(this.baseUrl + 'post-spelling-words.php', spellingWord);
+    return this.http.post(this.baseUrl + 'post-spelling-word.php', spellingWord);
   }
 }
