@@ -25,4 +25,21 @@ class Student{
     
         return $stmt;
     }
+
+function create(){
+ 
+    $query = "INSERT INTO student (id, name, deletedate) VALUES ('$this->id', :name, :deletedate)";
+ 
+    $stmt = $this->conn->prepare($query);
+ 
+    $stmt->bindParam(":name", $this->name);
+    $stmt->bindParam(":deletedate", $this->deletedate);
+ 
+    if($stmt->execute()){
+        return true;
+    }
+ 
+    return false;
+     
+}
 }
