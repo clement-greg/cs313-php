@@ -1,0 +1,12 @@
+<div *ngFor="let student of students">
+  <a mat-button mat-raised-button class="student-button" routerLink="/spelling-lists/{{student.id}}">
+      <i class="material-icons">
+          supervised_user_circle
+          </i>
+    {{student.name}}
+        </a>
+</div>
+
+<i class="material-icons">
+    supervised_user_circle
+    </i>
