@@ -345,6 +345,8 @@ MIT
 
 @angular/material/form-field
 
+@angular/material/tabs
+
 zone.js
 MIT
 The MIT License

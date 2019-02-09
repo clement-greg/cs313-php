@@ -1,23 +1,42 @@
-<form>
-  <div class="flex-container">
-    <div>
-      <mat-form-field class="example-full-width">
-        <input matInput name="new-word-box" placeholder="New Word" [(ngModel)]="newWord">
-      </mat-form-field>
-    </div>
-    <div class="flex-none">
+<div class="main-content-container" *ngIf="!loading">
+  <h1 *ngIf="spellingList">
 
-      <button mat-button mat-raised-button color="primary" type="submit" (click)="createNewWord()" [disabled]="!newWord || adding">
-        <mat-spinner *ngIf="adding" class="thirty"></mat-spinner>
-        Add
-      </button>
+    {{spellingList.name}}
+    <span class="small">Words</span>
+  </h1>
+
+  <a mat-button mat-raised-button class="big-button" color="primary" routerLink="/quiz/{{spellingListId}}">Take Quiz</a>
+  <form>
+    <div class="flex-container">
+      <div>
+        <mat-form-field class="example-full-width">
+          <input matInput name="new-word-box" placeholder="New Word" [(ngModel)]="newWord">
+        </mat-form-field>
+      </div>
+      <div class="flex-none">
+
+        <button mat-button mat-raised-button color="primary" type="submit" (click)="createNewWord()" [disabled]="!newWord || adding">
+          <mat-spinner *ngIf="adding" class="thirty"></mat-spinner>
+          Add
+        </button>
+      </div>
+    </div>
+  </form>
+
+
+  <div mat-button class="select-button" [class.slideOutLeft]="word.doremove" *ngFor="let word of spellingWords">
+    <div class="flex-container">
+      <div>{{word.word}}</div>
+      <div class="flex-none">
+        <button mat-button (click)="removeWord(word)" [disabled]="word.removing" >
+          <mat-spinner class="twenth" *ngIf="word.removing"></mat-spinner>
+          <span *ngIf="!word.removing">X</span>
+        </button>
+      </div>
     </div>
   </div>
-</form>
+</div>
 
-
-<div *ngFor="let word of spellingWords">
-  {{word.word}}
-
-  <button mat-button (click)="removeWord(word)">X</button>
+<div *ngIf="loading">
+  <mat-spinner></mat-spinner> Loading...
 </div>

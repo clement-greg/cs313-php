@@ -26,17 +26,29 @@ class SpellingList{
         return $stmt;
     }
 
-function read($studentid){
-    $query = "SELECT *
-                FROM spellinglist 
-                WHERE studentid=:studentid AND deletedate IS NULL 
-                ORDER BY createddate";
- 
-    $stmt = $this->conn->prepare($query);
-    $stmt->bindParam(":studentid", $studentid);
-    $stmt->execute();
-    return $stmt;
-}
+    function read($studentid){
+        $query = "SELECT *
+                    FROM spellinglist 
+                    WHERE studentid=:studentid AND deletedate IS NULL 
+                    ORDER BY createddate";
+    
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":studentid", $studentid);
+        $stmt->execute();
+        return $stmt;
+    }
+
+    function readOne($id){
+        $query = "SELECT *
+                    FROM spellinglist 
+                    WHERE id=:id AND deletedate IS NULL 
+                    ORDER BY createddate";
+    
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        return $stmt;
+    }
 function create(){
  
     // query to insert record

@@ -26,6 +26,10 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'get-students.php');
   }
 
+  getSpellingList(id: string): Observable<any> {
+    return this.http.get(this.baseUrl + 'get-spelling-list.php?id=' + id);
+  }
+
   saveStudent(student: Student): Observable<any> {
     return this.http.post(this.baseUrl + 'post-student.php', student);
   }

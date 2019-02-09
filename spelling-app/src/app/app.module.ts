@@ -45,11 +45,13 @@ import { SpellingWordsComponent } from './pages/spelling-words/spelling-words.co
 import { FormsModule } from '@angular/forms';
 import { AddStudentComponent } from './pages/add-student/add-student.component';
 import { AddListComponent } from './pages/add-list/add-list.component';
+import { QuizComponent } from './pages/quiz/quiz.component';
 
 const appRoutes: Routes = [
   { path: '', component: StudentsComponent },
   { path: 'spelling-lists/:student-id', component: SpellingListsComponent },
   { path: 'spelling-words/:spelling-list-id', component: SpellingWordsComponent },
+  { path: 'quiz/:spelling-list-id', component: QuizComponent},
   { path: 'home', redirectTo: '/' },
   { path: '**', redirectTo: '/404' },
 ];
@@ -62,7 +64,8 @@ const appRoutes: Routes = [
     SpellingListsComponent,
     SpellingWordsComponent,
     AddStudentComponent,
-    AddListComponent
+    AddListComponent,
+    QuizComponent
   ],
   entryComponents: [
     AddStudentComponent,

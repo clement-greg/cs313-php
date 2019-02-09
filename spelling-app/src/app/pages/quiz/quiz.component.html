@@ -1,0 +1,11 @@
+<button mat-button (click)="selectedIndex = selectedIndex + 1">Skip</button>
+<mat-tab-group class="no-tabs" [(selectedIndex)]="selectedIndex">
+  <mat-tab label="First" *ngFor="let word of spellingWords">
+    <h1>{{word.word}}</h1>
+  </mat-tab>
+
+  <mat-tab *ngIf="wordsLoaded">
+    <h1>You've Reached the end</h1>
+  </mat-tab>
+
+</mat-tab-group>

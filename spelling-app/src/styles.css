@@ -148,3 +148,44 @@ mat-dialog-container {
 .mat-dialog-title {
     color: rgba(109,109,109,.8);
 }
+
+.main-content-container {
+  max-width: 600px;
+}
+
+input {
+  color: #fff;
+}
+
+.big-button {
+  display: block;
+  width: 100%;
+  font-size: 24px;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+mat-tab-group.no-tabs mat-tab-header {
+  display: none;
+}
+
+@keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+}
+
+
+
+.slideOutLeft {
+  animation: slideOutLeft .5s;
+}
