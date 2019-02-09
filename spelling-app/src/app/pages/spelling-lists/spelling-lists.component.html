@@ -1,6 +1,34 @@
-<p>
-  spelling-lists works!
-</p>
+<h1 *ngIf="student">
+
+  {{student.name}}'s
+  <span class="small">Spelling Lists</span>
+</h1>
+
+<div *ngIf="!loading">
 
 
-<button mat-button (click)="createNew()">Create New</button>
+
+  <a mat-button class="select-button" routerLink="/spelling-words/{{list.id}}" *ngFor="let list of spellingLists">
+
+    <i class="material-icons">
+      assignment
+    </i>
+
+    <span class="student-name">
+      {{list.name}}</span>
+  </a>
+
+  <button mat-button class="select-button" (click)="addList()">
+    <i class="material-icons">
+      add_circle
+    </i>
+
+    <span class="student-name">Add List</span>
+  </button>
+
+</div>
+
+<div *ngIf="loading">
+  <mat-spinner></mat-spinner> Loading Spelling Lists...
+</div>
+<!-- <button mat-button (click)="createNew()">Create New</button> -->

@@ -1,4 +1,16 @@
-.student-button {
-    display: block;
-    width: 100%;
+
+
+.student-button i {
+  font-size: 40px;
+}
+
+.header-image {
+  height: 200px;
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.student-name {
+  font-size: 24px;
 }

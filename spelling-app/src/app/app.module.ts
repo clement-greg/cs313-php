@@ -41,10 +41,15 @@ import { ApiService } from './services/api.service';
 import { Routes, RouterModule } from '@angular/router';
 import { StudentsComponent } from './pages/students/students.component';
 import { SpellingListsComponent } from './pages/spelling-lists/spelling-lists.component';
+import { SpellingWordsComponent } from './pages/spelling-words/spelling-words.component';
+import { FormsModule } from '@angular/forms';
+import { AddStudentComponent } from './pages/add-student/add-student.component';
+import { AddListComponent } from './pages/add-list/add-list.component';
 
 const appRoutes: Routes = [
   { path: '', component: StudentsComponent },
-  { path: 'spelling-lists/:student-id', component: SpellingListsComponent},
+  { path: 'spelling-lists/:student-id', component: SpellingListsComponent },
+  { path: 'spelling-words/:spelling-list-id', component: SpellingWordsComponent },
   { path: 'home', redirectTo: '/' },
   { path: '**', redirectTo: '/404' },
 ];
@@ -54,14 +59,23 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     StudentsComponent,
-    SpellingListsComponent 
+    SpellingListsComponent,
+    SpellingWordsComponent,
+    AddStudentComponent,
+    AddListComponent
+  ],
+  entryComponents: [
+    AddStudentComponent,
+    AddListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
     RouterModule.forRoot(
-      appRoutes, {enableTracing: false}  // <-- debugging purposes only
-      ),
+      appRoutes, { enableTracing: false }  // <-- debugging purposes only
+    ),
     MatAutocompleteModule,
     MatCheckboxModule,
     MatDatepickerModule,

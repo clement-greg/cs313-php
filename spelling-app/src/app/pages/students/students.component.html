@@ -1,12 +1,27 @@
-<div *ngFor="let student of students">
-  <a mat-button mat-raised-button class="student-button" routerLink="/spelling-lists/{{student.id}}">
-      <i class="material-icons">
-          supervised_user_circle
-          </i>
-    {{student.name}}
-        </a>
+<h1>
+    Your
+    <span class="small"> Students</span>
+</h1>
+<div *ngIf="!loading">
+  <a mat-button  class="select-button" routerLink="/spelling-lists/{{student.id}}" *ngFor="let student of students">
+
+    <i class="material-icons">
+      supervised_user_circle
+    </i>
+
+    <span class="student-name">
+      {{student.name}}</span>
+  </a>
+
+  <button mat-button  class="select-button" (click)="addStudent()">
+    <i class="material-icons">
+      add_circle
+    </i>
+
+    <span class="student-name">Add Student</span>
+  </button>
 </div>
 
-<i class="material-icons">
-    supervised_user_circle
-    </i>
+<div *ngIf="loading">
+    <mat-spinner></mat-spinner> Loading Students...
+</div>

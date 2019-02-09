@@ -1,0 +1,28 @@
+<div class="add-container">
+    <div class="padding-20">
+      <div class="flex-container">
+        <div> <h1 mat-dialog-title>Add Spelling List</h1></div>
+        <div class="flex-none">
+          <button mat-button mat-dialog-close>X</button>
+        </div>
+      </div>
+     
+      <div mat-dialog-content>
+        <p>What is the list name?</p>
+        <mat-form-field>
+          <input matInput [(ngModel)]="listName">
+        </mat-form-field>
+      </div>
+      <div mat-dialog-actions style="width: 100%">
+        <div class="flex-container">
+          <div></div>
+          <div class="flex-none">
+            <button mat-button mat-raised-button color="primary" (click)="save()" [disabled]="saving || !listName" cdkFocusInitial>
+              <mat-spinner *ngIf="saving" class="thirty"></mat-spinner>
+              Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

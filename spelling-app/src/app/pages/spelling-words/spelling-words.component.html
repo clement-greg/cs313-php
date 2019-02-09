@@ -1,0 +1,23 @@
+<form>
+  <div class="flex-container">
+    <div>
+      <mat-form-field class="example-full-width">
+        <input matInput name="new-word-box" placeholder="New Word" [(ngModel)]="newWord">
+      </mat-form-field>
+    </div>
+    <div class="flex-none">
+
+      <button mat-button mat-raised-button color="primary" type="submit" (click)="createNewWord()" [disabled]="!newWord || adding">
+        <mat-spinner *ngIf="adding" class="thirty"></mat-spinner>
+        Add
+      </button>
+    </div>
+  </div>
+</form>
+
+
+<div *ngFor="let word of spellingWords">
+  {{word.word}}
+
+  <button mat-button (click)="removeWord(word)">X</button>
+</div>

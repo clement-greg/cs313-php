@@ -11,10 +11,26 @@ class SpellingList{
         $this->conn = $db;
     }
 
+    function delete($id){
+        $this->id = $id;
+        $query = "UPDATE spellinglist SET deletedate = NOW() WHERE id='$this->id'";
+
+        $stmt = $this->conn->prepare($query);
+        if($stmt->execute()) {
+            return true;
+        }
+
+        print_r($this->conn->errorInfo());
+        print_r($stmt->errorInfo());
+
+        return $stmt;
+    }
+
 function read($studentid){
-    $query = "SELECT
-                *
-            FROM spellinglist WHERE studentid=:studentid ORDER BY createddate";
+    $query = "SELECT *
+                FROM spellinglist 
+                WHERE studentid=:studentid AND deletedate IS NULL 
+                ORDER BY createddate";
  
     $stmt = $this->conn->prepare($query);
     $stmt->bindParam(":studentid", $studentid);

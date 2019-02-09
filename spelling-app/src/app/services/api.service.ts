@@ -38,4 +38,12 @@ export class ApiService {
   saveSpellingWord(spellingWord: SpellingWord): Observable<any> {
     return this.http.post(this.baseUrl + 'post-spelling-word.php', spellingWord);
   }
+
+  deleteSpellingWord(spellingWord: SpellingWord): Observable<any> {
+    return this.http.delete(this.baseUrl + 'delete-spelling-word.php?id=' + spellingWord.id);
+  }
+
+  getStudent(id: string): Observable<any> {
+    return this.http.get(this.baseUrl + 'get-student.php?id=' + id);
+  }
 }
