@@ -9,6 +9,10 @@
     clip:rect(0,0,0,0);
 }
 
+fieldset.small {
+    border: none;
+}
+
 .rating:not(:checked) > label {
     float:right;
     width:1em;
@@ -19,6 +23,10 @@
     font-size:64px;
     line-height:1.2;
     color:#ddd;
+}
+
+.small label {
+    font-size: 24px !important;
 }
 
 .rating:not(:checked) > label:before {

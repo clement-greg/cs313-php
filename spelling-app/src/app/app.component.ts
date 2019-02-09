@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { PubSubService } from './services/pub-sub.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'spelling-app';
+
+
+  constructor(private pubSub: PubSubService) {
+
+    pubSub.published.subscribe(event => {
+      if (event.eventName = 'navigation-started') {
+
+      }
+    });
+
+  }
 }

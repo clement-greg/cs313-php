@@ -4,6 +4,7 @@
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: rgba(109,109,109,1);
+  background-image: url(assets/bg2.jpg);
   background-size: cover;
   color: #fff;
 }

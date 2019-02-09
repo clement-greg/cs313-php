@@ -48,6 +48,7 @@ import { AddListComponent } from './pages/add-list/add-list.component';
 import { QuizComponent } from './pages/quiz/quiz.component';
 import { RatingComponent } from './components/rating.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { PubSubService } from './services/pub-sub.service';
 
 const appRoutes: Routes = [
   { path: '', component: StudentsComponent },
@@ -129,7 +130,7 @@ const appRoutes: Routes = [
 
     })
   ],
-  providers: [ApiService],
+  providers: [ApiService, PubSubService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

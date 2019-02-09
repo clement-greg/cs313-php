@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Student } from '../models/student.model';
 import { SpellingList } from '../models/spelling-list.model';
 import { SpellingWord } from '../models/spelling-word.model';
+import { SpellingWordScore } from '../models/spelling-word-score.model';
 
 @Injectable({
   providedIn: 'root'
@@ -57,4 +58,17 @@ export class ApiService {
   getStudent(id: string): Observable<any> {
     return this.http.get(this.baseUrl + 'get-student.php?id=' + id);
   }
+
+  getSpellingWordScores(spellingWordId: string): Observable<any> {
+    return this.http.get(this.baseUrl + 'get-spelling-word-scores.php?spellingwordid=' + spellingWordId);
+  }
+
+  saveSpellingWordScore(spellingWordScore: SpellingWordScore): Observable<any> {
+    return this.http.post(this.baseUrl + 'post-spelling-word-score.php', spellingWordScore);
+  }
+
+  deleteSpellingWordScore(spellingWordScore: SpellingWordScore): Observable<any> {
+    return this.http.delete(this.baseUrl + 'delete-spelling-word.score.php?id=' + spellingWordScore.id);
+  }
+
 }

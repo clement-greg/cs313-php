@@ -2,33 +2,75 @@
   <circle-progress [percent]="currentPercent" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [animation]="true"
     [animationDuration]="300"></circle-progress>
 
-    <div style="text-align: right">
-        <button mat-button *ngIf="spellingWords && selectedIndex < spellingWords.length" (click)="selectedIndex = selectedIndex + 1">
-            Skip
-            <i class="material-icons">
-                chevron_right
-              </i>
-          </button>
+  <div style="text-align: right">
+    <button mat-button *ngIf="spellingWords && selectedIndex < spellingWords.length" (click)="selectedIndex = selectedIndex + 1">
+      Skip
+      <i class="material-icons">
+        chevron_right
+      </i>
+    </button>
 
-          <button mat-button *ngIf="spellingWords && selectedIndex == spellingWords.length" (click)="selectedIndex = 0">
+    <button mat-button *ngIf="spellingWords && selectedIndex == spellingWords.length" (click)="selectedIndex = 0">
 
-              <i class="material-icons">
-                  refresh
-                </i>
-                Restart
-            </button>
-    </div>
+      <i class="material-icons">
+        refresh
+      </i>
+      Restart
+    </button>
+  </div>
 </div>
-<mat-tab-group class="no-tabs" [(selectedIndex)]="selectedIndex">
+<mat-tab-group class="no-tabs" [(selectedIndex)]="selectedIndex" (selectedIndexChange)="loadScores($event)">
   <mat-tab label="First" *ngFor="let word of spellingWords">
-    <h1>{{word.word}}</h1>
+    <h1 style="text-transform: none">{{word.word}}</h1>
 
-    <app-rating (ratingClick)="recordRating($event, word)"></app-rating>
+    <app-rating (ratingClick)="recordRating($event, word)" [itemId]="word.id"></app-rating>
+
+    <div style="clear: both"></div>
+    <div>
+      <h3>Score History</h3>
+
+      <div *ngFor="let score of word.scores" class="flex-container" style="border-bottom: 1px dotted #fff">
+        <div style="padding-top: 10px">
+          {{score.scoredate | date: 'shortDate'}}
+          {{score.scoredate | date: 'shortTime'}}
+        </div>
+        <div>
+          <app-rating [isSmall]="true" [itemId]="score.id" [readOnly]="true" [(rating)]="score.score"></app-rating>
+        </div>
+        <div class="flex-none">
+          <button mat-button (click)="removeScore(score, word)" [disabled]="score.deleting">
+            <mat-spinner *ngIf="score.deleting" class="twenty"></mat-spinner>
+            <span *ngIf="!score.deleting">X</span></button>
+        </div>
+
+
+      </div>
+    </div>
   </mat-tab>
 
   <mat-tab *ngIf="wordsLoaded">
+    <img src="assets/mds-congrats.png" style="height: 100px">
     <h1>You've Reached the end</h1>
-    <img src="assets/mds-congrats.png">
+
+    <div>
+      <button mat-button *ngIf="spellingWords && selectedIndex == spellingWords.length" (click)="selectedIndex = 0" style="vertical-align: top">
+
+        <i class="material-icons">
+          refresh
+        </i>
+        <br>
+        Restart Quiz
+      </button>
+
+      <a mat-button routerLink="/">
+
+        <i class="material-icons">
+          home
+        </i>
+        <br>
+        Return Home
+      </a>
+    </div>
   </mat-tab>
 
 </mat-tab-group>
