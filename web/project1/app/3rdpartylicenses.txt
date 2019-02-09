@@ -341,6 +341,10 @@ MIT
 
 @angular/material/snack-bar
 
+@angular/material/progress-spinner
+
+@angular/material/form-field
+
 zone.js
 MIT
 The MIT License

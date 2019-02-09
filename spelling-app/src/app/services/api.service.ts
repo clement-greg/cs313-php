@@ -10,10 +10,17 @@ import { SpellingWord } from '../models/spelling-word.model';
 })
 export class ApiService {
 
-  baseUrl = 'http://localhost:8000/project1/api/'
+  //baseUrl = 'http://localhost:8000/project1/api/'
   constructor(private http: HttpClient) { }
 
 
+  get baseUrl() {
+    if (window.location.href.indexOf('localhost') > -1) {
+      return 'http://localhost:8000/project1/api/';
+    }
+
+    return 'https://secret-wildwood-23194.herokuapp.com/project1/api/';
+  }
   getStudents(): Observable<any> {
 
     return this.http.get(this.baseUrl + 'get-students.php');
