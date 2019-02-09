@@ -47,6 +47,16 @@
                 </div>
             </div>
         </a>
+        <a href="/project1/app" class="menu-item">
+            <div class="flex-container">
+                <div class="flex-none"><i class="material-icons">chevron_right
+                    </i></div>
+                <div>
+                    <h3>Project 1</h3>
+                    <p>Spelling Time</p>
+                </div>
+            </div>
+        </a>
     </div>
 
 </body>
