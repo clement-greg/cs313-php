@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { StarRatingModule } from 'angular-star-rating';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -46,6 +46,8 @@ import { FormsModule } from '@angular/forms';
 import { AddStudentComponent } from './pages/add-student/add-student.component';
 import { AddListComponent } from './pages/add-list/add-list.component';
 import { QuizComponent } from './pages/quiz/quiz.component';
+import { RatingComponent } from './components/rating.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 const appRoutes: Routes = [
   { path: '', component: StudentsComponent },
@@ -65,7 +67,8 @@ const appRoutes: Routes = [
     SpellingWordsComponent,
     AddStudentComponent,
     AddListComponent,
-    QuizComponent
+    QuizComponent,
+    RatingComponent
   ],
   entryComponents: [
     AddStudentComponent,
@@ -108,7 +111,23 @@ const appRoutes: Routes = [
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    HttpClientModule
+    HttpClientModule,
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      // outerStrokeColor: "#78C000",
+      // innerStrokeColor: "#C7E596",
+      outerStrokeColor: '#a1b28b',
+      innerStrokeColor: '#87ea07',
+      animationDuration: 300,
+      unitsFontSize: '48px',
+      unitsColor: '#87ea07',
+      titleFontSize: '48px',
+      titleColor: '#87ea07',
+
+    })
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

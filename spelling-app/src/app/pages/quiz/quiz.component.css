@@ -1,0 +1,13 @@
+circle-progress {
+
+}
+
+.circle-container {
+    position: fixed;
+    margin-left: 668px;
+    margin-top: 200px;
+    width: 500px;
+    background-color: rgba(0,0,0,.4);
+    text-align: center;
+    border-radius: 7px;
+}

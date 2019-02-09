@@ -46,4 +46,18 @@ export class QuizComponent implements OnInit {
       }
     });
   }
+
+  get currentPercent() {
+    if(!this.spellingWords || this.spellingWords.length === 0) {
+      return 0;
+    }
+
+    return (this.selectedIndex / this.spellingWords.length) * 100;
+  }
+
+  recordRating($data, word) {
+    console.log($data);
+    console.log(word);
+    this.selectedIndex++;
+  }
 }
