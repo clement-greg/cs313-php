@@ -15,12 +15,12 @@
       }
       @keyframes fadeInFromBig {
         from {
-            transform: scale(2) translate(17.7px, 197.68px);
+            transform: scale(2) translate(26.62px, 202.33px);
             opacity: 0;
           }
         
           to {
-            transform: scale(1) translate(17.7px, 197.68px);
+            transform: scale(1) translate(26.62px, 202.33px);
             opacity: 1;
           }
       }
