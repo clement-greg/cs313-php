@@ -30,7 +30,7 @@ class SpellingList{
         $query = "SELECT *
                     FROM spellinglist 
                     WHERE studentid=:studentid AND deletedate IS NULL 
-                    ORDER BY createddate";
+                    ORDER BY createddate DESC";
     
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":studentid", $studentid);

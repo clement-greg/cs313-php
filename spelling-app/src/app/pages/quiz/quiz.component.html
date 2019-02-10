@@ -1,4 +1,6 @@
 <div class="circle-container">
+
+  <h2>Your Progress</h2>
   <circle-progress [percent]="currentPercent" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [animation]="true"
     [animationDuration]="300"></circle-progress>
 
@@ -21,6 +23,7 @@
 </div>
 <mat-tab-group class="no-tabs" [(selectedIndex)]="selectedIndex" (selectedIndexChange)="loadScores($event)">
   <mat-tab label="First" *ngFor="let word of spellingWords">
+
     <h1 style="text-transform: none">{{word.word}}</h1>
 
     <app-rating (ratingClick)="recordRating($event, word)" [itemId]="word.id"></app-rating>
@@ -49,7 +52,9 @@
   </mat-tab>
 
   <mat-tab *ngIf="wordsLoaded">
-    <img src="assets/mds-congrats.png" style="height: 100px">
+    <div style="text-align: center">
+      <img src="assets/congrats.svg">
+    </div>
     <h1>You've Reached the end</h1>
 
     <div>

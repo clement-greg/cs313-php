@@ -2,6 +2,44 @@ circle-progress {
 
 }
 
+#congrats {
+    height: 300px;
+}
+
+@keyframes fadeInFromBig {
+    from {
+        transform: scale(2) translate(17.7px, 197.68px);
+        opacity: 0;
+      }
+    
+      to {
+        transform: scale(1) translate(17.7px, 197.68px);
+        opacity: 1;
+      }
+}
+
+#congrats-text {
+    transform-origin: 50% 50%; 
+    animation: fadeInFromBig 1.5s;
+}
+
+@keyframes spinIn {
+    from {
+      transform: scale(.25) rotate(180deg);
+      opacity: 0;
+    }
+  
+    to {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
+  }
+
+#star {
+    transform-origin: 50% 50%;
+    animation: spinIn 1.5s;
+}
+
 .circle-container {
     position: fixed;
     margin-left: 668px;

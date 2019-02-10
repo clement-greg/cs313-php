@@ -1,0 +1,51 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+http://secret-wildwood-23194.herokuapp.com/project1/app/
+
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+Here is the link for the application front end (in angular): https://github.com/clement-greg/cs313-php/tree/master/spelling-app
+Here is the link for the API layer (in PHP): https://github.com/clement-greg/cs313-php/tree/master/web/project1
+
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+The user can create a new student
+View spelling lists assigned to a student
+Add a new spelling list to a student
+View the words on a spelling list
+Remove the individual words on a spelling list
+The use can quiz the student on a list (recording how well they spell each word individually)
+Can view the history of how well the student spelled the word in the paste
+Delete a previously recorded score
+
+
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+Delete a spelling list
+Delete a student
+Add better navigation (ie breadcrumbs)
+
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+I got more experience learning PHP and PostGres, both of which I have had very little previous experience with.
+
+6. Why should you create a separate user account for your application to access the database?
+If your application uses an administrative account to access the database, that could leave your database open
+to attack from a malicious user.  They could do things to you database that you had never intended.  If are 
+accessing the database with a user with restricted permissions, that can do a lot to protect your data and infrastructure
+in the event of a compromised application.
+
+
+7. Please select the category you feel best describes your assignment:
+1 - Some attempt was made
+2 - Developing, but significantly deficient
+3 - Slightly deficient, but still mostly adequate
+4 - Meets requirements
+5 - Shows creativity and excels above and beyond requirements
+5
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+I think I have put a great deal of thought into the user experience of the application to make if functional and engaging.
+

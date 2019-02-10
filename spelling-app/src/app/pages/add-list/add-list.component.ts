@@ -35,6 +35,7 @@ export class AddListComponent implements OnInit {
     list.id = Utilities.newid();
     list.name = this.listName;
     list.studentid = this.studentId;
+    list.createddate = new Date();
  
 
     this.api.saveSpellingList(list).subscribe(results => {

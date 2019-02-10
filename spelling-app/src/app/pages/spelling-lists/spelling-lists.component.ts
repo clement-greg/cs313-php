@@ -34,26 +34,22 @@ export class SpellingListsComponent implements OnInit {
           console.log('results:');
           console.log(results);
           this.loading = false;
-          this.spellingLists = results.records;
+          if (results) {
+            this.spellingLists = results.records;
+          }
         });
       }
     });
   }
 
-  createNew() {
-    const list = new SpellingList();
-    list.id = Utilities.newid();
-    list.name = 'Test List!!';
-    list.studentid = this.studentId;
-    list.createddate = new Date();
-
-    this.apiService.saveSpellingList(list).subscribe(() => { });
-  }
-
+  
   addList() {
     const ref = this.dialog.open(AddListComponent, { data: this.studentId });
     ref.afterClosed().subscribe(results => {
       if (results) {
+        if (!this.spellingLists) {
+          this.spellingLists = [];
+        }
         this.spellingLists.push(results);
       }
     });
