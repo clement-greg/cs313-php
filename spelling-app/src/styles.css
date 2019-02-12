@@ -204,3 +204,12 @@ mat-tab-group.no-tabs mat-tab-header {
 .slideOutLeft {
   animation: slideOutLeft .5s;
 }
+
+.data-label  {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.top-margin-10 {
+  margin-top: 10px;
+}

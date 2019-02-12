@@ -9,4 +9,13 @@ export class SpellingWord {
 
     // Client-side only
     scores: SpellingWordScore[];
+    definition: SpellingWordDefinition;
 }
+
+export class SpellingWordDefinition {
+    alternateUrl: string;
+    soundUrl: string;
+    definitions: string[];
+}
+
+

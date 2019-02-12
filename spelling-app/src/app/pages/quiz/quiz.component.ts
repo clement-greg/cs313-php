@@ -5,6 +5,7 @@ import { SpellingWord } from 'src/app/models/spelling-word.model';
 import { SpellingList } from 'src/app/models/spelling-list.model';
 import { SpellingWordScore } from 'src/app/models/spelling-word-score.model';
 import { Utilities } from 'src/app/utilities';
+declare var responsiveVoice: any;
 
 @Component({
   selector: 'app-quiz',
@@ -74,6 +75,14 @@ export class QuizComponent implements OnInit {
           spellingWord.scores = [];
         }
       });
+
+
+    }
+
+    if(spellingWord && !spellingWord.definition) {
+      this.apiService.getWordDefinition(spellingWord).subscribe(definition=> {
+        spellingWord.definition = definition;
+      });
     }
   }
 
@@ -83,6 +92,10 @@ export class QuizComponent implements OnInit {
       spellingWord.scores.splice(spellingWord.scores.indexOf(score), 1);
       score.deleting = false;
     });
+  }
+
+  speakWord(word: SpellingWord) {
+    responsiveVoice.speak(word.word, 'US English Female');
   }
 
   recordRating($data, word: SpellingWord) {

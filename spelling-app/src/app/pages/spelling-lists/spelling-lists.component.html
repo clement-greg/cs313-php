@@ -8,15 +8,27 @@
 
 
 
-  <a mat-button class="select-button" routerLink="/spelling-words/{{list.id}}" *ngFor="let list of spellingLists">
+  <div *ngFor="let list of spellingLists" class="flex-container">
+    <div>
+      <a mat-button class="select-button" routerLink="/spelling-words/{{list.id}}">
 
-    <i class="material-icons">
-      assignment
-    </i>
+        <i class="material-icons">
+          assignment
+        </i>
+    
+        <span class="student-name">
+          {{list.name}}</span>
+      </a>
+    </div>
+    <div class="flex-none">
 
-    <span class="student-name">
-      {{list.name}}</span>
-  </a>
+      <button mat-button (click)="deleteList(list)" [disabled]="list.deleting">
+        <mat-spinner *ngIf="list.deleting" class="thirty"></mat-spinner>
+        <span *ngIf="!list.deleting">X</span>
+      </button>
+    </div>
+  </div>
+
 
   <button mat-button class="select-button" (click)="addList()">
     <i class="material-icons">

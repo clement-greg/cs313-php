@@ -1,0 +1,39 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+http://secret-wildwood-23194.herokuapp.com/project1/app/
+
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+Here is the link for the application front end (in angular): https://github.com/clement-greg/cs313-php/tree/master/spelling-app
+Here is the link for the API layer (in PHP): https://github.com/clement-greg/cs313-php/tree/master/web/project1
+
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+I want the application to call a service that will retrieve dictionary definitions and present those definitions to the user.
+I also want to use the browser text-to-speech API to allow the app to "Read" the word.
+
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+I created an SVG graphic that had css animations to give the presentation a little more pop.
+
+6. What is a benefit of having a foreign key constraint?
+It prevents the creation or alteration of bad data.  It will prevent saving a foreign key value into a table that does not exist in the source table.
+
+
+7. Please select the category you feel best describes your assignment:
+1 - Some attempt was made
+2 - Developing, but significantly deficient
+3 - Slightly deficient, but still mostly adequate
+4 - Meets requirements
+5 - Shows creativity and excels above and beyond requirements
+5
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+A lot of work has gone into creating a design experience that matches the function of the application.  
+
+

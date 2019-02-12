@@ -55,6 +55,10 @@ export class ApiService {
     return this.http.delete(this.baseUrl + 'delete-spelling-word.php?id=' + spellingWord.id);
   }
 
+  deleteSpellingList(spellingList: SpellingList): Observable<any> {
+    return this.http.delete(this.baseUrl + 'delete-spelling-list.php?id=' + spellingList.id);
+  }
+
   getStudent(id: string): Observable<any> {
     return this.http.get(this.baseUrl + 'get-student.php?id=' + id);
   }
@@ -71,4 +75,7 @@ export class ApiService {
     return this.http.delete(this.baseUrl + 'delete-spelling-word.score.php?id=' + spellingWordScore.id);
   }
 
+  getWordDefinition(spellingWord: SpellingWord): Observable<any> {
+    return this.http.get('https://gregbclement.com/api/spellingword/definition?word=' + spellingWord.word);
+  }
 }

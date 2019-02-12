@@ -24,11 +24,30 @@
 <mat-tab-group class="no-tabs" [(selectedIndex)]="selectedIndex" (selectedIndexChange)="loadScores($event)">
   <mat-tab label="First" *ngFor="let word of spellingWords">
 
-    <h1 style="text-transform: none">{{word.word}}</h1>
+    <div class="flex-container">
+      <div class="flex-none"><h1 style="text-transform: none; margin-top: 0">{{word.word}}</h1></div>
+      <div>
+        <button title="Speak the word" mat-button (click)="speakWord(word)"><i class="material-icons">
+          record_voice_over
+          </i></button>
+      </div>
+    </div>
+    
+
 
     <app-rating (ratingClick)="recordRating($event, word)" [itemId]="word.id"></app-rating>
 
     <div style="clear: both"></div>
+
+    <div *ngIf="word.definition">
+      <div class="data-label top-margin-10">Word Definitions</div>
+      <ul>
+        <li *ngFor="let def of word.definition.definitions">
+          <span [innerHTML]="def"></span>
+        </li>
+      </ul>
+    </div>
+
     <div>
       <h3>Score History</h3>
 

@@ -42,7 +42,15 @@ export class SpellingListsComponent implements OnInit {
     });
   }
 
-  
+  deleteList(list: SpellingList) {
+    list.deleting = true;
+    this.apiService.deleteSpellingList(list).subscribe(results => {
+      list.deleting = false;
+      this.spellingLists.splice(this.spellingLists.indexOf(list), 1);
+    });
+  }
+
+
   addList() {
     const ref = this.dialog.open(AddListComponent, { data: this.studentId });
     ref.afterClosed().subscribe(results => {

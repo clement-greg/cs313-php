@@ -3,4 +3,7 @@ export class SpellingList {
     name: string;
     studentid: string;
     createddate: Date;
+
+    // client-side only
+    deleting = false;
 }
