@@ -26,6 +26,7 @@ if($num>0){
             "name" => $name,
             "studentid"=>$studentid,
             "createddate"=>$createddate,
+            "studentname"=>$studentname,
         );
  
         array_push($results["records"], $result);

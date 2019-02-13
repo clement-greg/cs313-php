@@ -78,4 +78,20 @@ export class ApiService {
   getWordDefinition(spellingWord: SpellingWord): Observable<any> {
     return this.http.get('https://gregbclement.com/api/spellingword/definition?word=' + spellingWord.word);
   }
+
+  deleteStudent(student: Student): Observable<any> {
+    return this.http.delete(this.baseUrl + 'delete-student.php?id=' + student.id);
+  }
+
+  unDeleteStudent(student: Student): Observable<any> {
+    return this.http.put(this.baseUrl + 'un-delete-student.php?id=' + student.id, null);
+  }
+
+  unDeleteSpellingList(spellingList: SpellingList): Observable<any> {
+    return this.http.put(this.baseUrl + 'un-delete-spelling-list.php?id=' + spellingList.id, null);
+  }
+
+  unDeleteSpellingWord(spellingWord: SpellingWord): Observable<any> {
+    return this.http.put(this.baseUrl + 'un-delete-spelling-word.php?id=' + spellingWord.id, null);
+  }
 }

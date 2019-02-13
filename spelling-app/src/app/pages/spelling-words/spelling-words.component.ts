@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Utilities } from 'src/app/utilities';
 import { SpellingList } from 'src/app/models/spelling-list.model';
+import { MatSnackBar } from '@angular/material';
+import { BreadcrumbItem } from 'src/app/interfaces/breadcrumb-provider.interface';
 
 @Component({
   selector: 'app-spelling-words',
@@ -19,7 +21,7 @@ export class SpellingWordsComponent implements OnInit {
   adding = false;
   loading = false;
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) { }
+  constructor(private route: ActivatedRoute, private apiService: ApiService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.route.params.subscribe(parameters => {
@@ -28,6 +30,15 @@ export class SpellingWordsComponent implements OnInit {
 
         this.apiService.getSpellingList(this.spellingListId).subscribe(results => {
           this.spellingList = results.records[0];
+          const homeBreadcrumb = new BreadcrumbItem();
+          homeBreadcrumb.name = 'Home';
+          homeBreadcrumb.url = '/';
+          this._breadCrumbs.push(homeBreadcrumb);
+          
+          const breadcrumb = new BreadcrumbItem();
+          breadcrumb.name = this.spellingList.studentname;
+          breadcrumb.url = '/spelling-lists/' + this.spellingList.studentid;
+          this._breadCrumbs.push(breadcrumb);
         });
 
         this.loading = true;
@@ -44,16 +55,29 @@ export class SpellingWordsComponent implements OnInit {
     });
   }
 
-  removeWord(word) {
+  private _breadCrumbs: BreadcrumbItem[] = [];
+  get breadcrumbs(): BreadcrumbItem[] {
+    return this._breadCrumbs;
+  }
+
+
+  removeWord(word: SpellingWord) {
     word.removing = true;
-    this.apiService.deleteSpellingWord(word).subscribe(() => {
-      word.doremove = true;
-
-      setTimeout(() => {
-
-        this.spellingWords.splice(this.spellingWords.indexOf(word), 1);
-      }, 500);
+    this.apiService.deleteSpellingWord(word).subscribe(results => {
+      const index = this.spellingWords.indexOf(word);
       word.removing = false;
+      word.doremove = true;
+      setTimeout(() => {
+        this.spellingWords.splice(index, 1);
+        word.doremove = false;
+      }, 500);
+
+      const ref = this.snackBar.open('Word Deleted', 'Undo', { duration: 10000 });
+      ref.onAction().subscribe(() => {
+        this.apiService.unDeleteSpellingWord(word).subscribe(r => {
+          this.spellingWords.splice(index, 0, word);
+        });
+      });
     });
 
   }

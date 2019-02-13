@@ -10,6 +10,7 @@ import { PubSubService } from './services/pub-sub.service';
 export class AppComponent {
   title = 'spelling-app';
 
+  breadcrumbComponent: any;
 
   constructor(private pubSub: PubSubService) {
 
@@ -20,4 +21,18 @@ export class AppComponent {
     });
 
   }
+
+  onActivate(data: any) {
+    if(data.breadcrumbs) {
+      this.breadcrumbComponent = data;
+    } else {
+      this.breadcrumbComponent = null;
+    }
+
+  }
+
+  onDeactivate(data: any) {
+    this.breadcrumbComponent = null;
+  }
+
 }

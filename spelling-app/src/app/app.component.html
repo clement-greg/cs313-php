@@ -1,14 +1,28 @@
 <div class="title-bar">
-  <a routerLink="/">
-    <img src="assets/logo.png">
-  </a>
+  <div class="flex-container">
+    <div class="flex-none">
+      <a routerLink="/">
+        <img src="assets/logo.png">
+      </a>
+    </div>
+    <div class="flex-none" *ngIf="breadcrumbComponent">
+      <ul id="breadcrumbs-list">
+        <li *ngFor="let breadcrumb of breadcrumbComponent.breadcrumbs">
+          <a [routerLink]="breadcrumb.url" class="hvr-underline-from-center">
+            
+            <i class="material-icons">
+              chevron_right
+              </i> <span>{{breadcrumb.name}}</span></a>
+        </li>
+      </ul>
+    </div>
+    <div></div>
+  </div>
 </div>
 
 <div class="container">
-
-
   <div class="content-container">
-    <router-outlet></router-outlet>
+    <router-outlet (activate)="onActivate($event)" (deactivate)='onDeactivate($event)'></router-outlet>
   </div>
 
   <div class="decorator"></div>

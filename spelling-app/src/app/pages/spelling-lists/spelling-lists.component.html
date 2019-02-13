@@ -8,7 +8,7 @@
 
 
 
-  <div *ngFor="let list of spellingLists" class="flex-container">
+  <div *ngFor="let list of spellingLists" class="flex-container" [class.slideOutLeft]="list.removing">
     <div>
       <a mat-button class="select-button" routerLink="/spelling-words/{{list.id}}">
 

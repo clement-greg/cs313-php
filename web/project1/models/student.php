@@ -26,6 +26,21 @@ class Student{
 
         return $stmt;
     }
+    
+    function undoDelete($id){
+        $this->id = $id;
+        $query = "UPDATE student SET deletedate = NULL WHERE id='$this->id'";
+
+        $stmt = $this->conn->prepare($query);
+        if($stmt->execute()) {
+            return true;
+        }
+
+        print_r($this->conn->errorInfo());
+        print_r($stmt->errorInfo());
+
+        return $stmt;
+    }
 
     function read(){
         $query = "SELECT *
@@ -57,20 +72,20 @@ class Student{
         return $stmt;
     }
 
-function create(){
- 
-    $query = "INSERT INTO student (id, name, deletedate) VALUES ('$this->id', :name, :deletedate)";
- 
-    $stmt = $this->conn->prepare($query);
- 
-    $stmt->bindParam(":name", $this->name);
-    $stmt->bindParam(":deletedate", $this->deletedate);
- 
-    if($stmt->execute()){
-        return true;
+    function create(){
+    
+        $query = "INSERT INTO student (id, name, deletedate) VALUES ('$this->id', :name, :deletedate)";
+    
+        $stmt = $this->conn->prepare($query);
+    
+        $stmt->bindParam(":name", $this->name);
+        $stmt->bindParam(":deletedate", $this->deletedate);
+    
+        if($stmt->execute()){
+            return true;
+        }
+    
+        return false;
+        
     }
- 
-    return false;
-     
-}
 }

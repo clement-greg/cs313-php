@@ -3,15 +3,28 @@
     <span class="small"> Students</span>
 </h1>
 <div *ngIf="!loading">
-  <a mat-button  class="select-button" routerLink="/spelling-lists/{{student.id}}" *ngFor="let student of students">
 
-    <i class="material-icons">
-      supervised_user_circle
-    </i>
+  <div  *ngFor="let student of students" class="flex-container" [class.slideOutLeft]="student.removing">
+    <div>
+        <a mat-button  class="select-button" routerLink="/spelling-lists/{{student.id}}">
 
-    <span class="student-name">
-      {{student.name}}</span>
-  </a>
+          <i class="material-icons">
+            supervised_user_circle
+          </i>
+      
+          <span class="student-name">
+            {{student.name}}</span>
+        </a>
+    </div>
+    <div class="flex-none">
+
+      <button mat-button (click)="deleteStudent(student)" [disabled]="student.deleting">
+        <mat-spinner *ngIf="student.deleting" class="twenty"></mat-spinner>
+        <span *ngIf="!student.deleting">X</span>
+        </button>
+    </div>
+  </div>
+
 
   <button mat-button  class="select-button" (click)="addStudent()">
     <i class="material-icons">

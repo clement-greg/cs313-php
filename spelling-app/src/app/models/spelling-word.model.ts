@@ -10,6 +10,8 @@ export class SpellingWord {
     // Client-side only
     scores: SpellingWordScore[];
     definition: SpellingWordDefinition;
+    removing = false;
+    doremove = true;
 }
 
 export class SpellingWordDefinition {

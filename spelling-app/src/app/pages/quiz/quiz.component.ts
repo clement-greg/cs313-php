@@ -5,6 +5,7 @@ import { SpellingWord } from 'src/app/models/spelling-word.model';
 import { SpellingList } from 'src/app/models/spelling-list.model';
 import { SpellingWordScore } from 'src/app/models/spelling-word-score.model';
 import { Utilities } from 'src/app/utilities';
+import { BreadcrumbItem } from 'src/app/interfaces/breadcrumb-provider.interface';
 declare var responsiveVoice: any;
 
 @Component({
@@ -32,6 +33,21 @@ export class QuizComponent implements OnInit {
 
         this.apiService.getSpellingList(this.spellingListId).subscribe(results => {
           this.spellingList = results.records[0];
+
+          const homeBreadcrumb = new BreadcrumbItem();
+          homeBreadcrumb.name = 'Home';
+          homeBreadcrumb.url = '/';
+          this._breadCrumbs.push(homeBreadcrumb);
+          
+          const breadcrumb = new BreadcrumbItem();
+          breadcrumb.name = this.spellingList.studentname;
+          breadcrumb.url = '/spelling-lists/' + this.spellingList.studentid;
+          this._breadCrumbs.push(breadcrumb);
+
+          const listBreadcrumb = new BreadcrumbItem();
+          listBreadcrumb.name = this.spellingList.name;
+          listBreadcrumb.url = '/spelling-words/' + this.spellingListId;
+          this._breadCrumbs.push(listBreadcrumb);
         });
 
         this.loading = true;
@@ -57,6 +73,12 @@ export class QuizComponent implements OnInit {
 
     return (this.selectedIndex / this.spellingWords.length) * 100;
   }
+
+  private _breadCrumbs: BreadcrumbItem[] = [];
+  get breadcrumbs(): BreadcrumbItem[] {
+    return this._breadCrumbs;
+  }
+
 
   loadScores(index: number) {
     if (!this.spellingWords) {

@@ -66,4 +66,19 @@ class SpellingWord{
         return $stmt;
     }
 
+    function undoDelete($id){
+        $this->id = $id;
+        $query = "UPDATE spellingword SET deletedate = NULL WHERE id='$this->id'";
+
+        $stmt = $this->conn->prepare($query);
+        if($stmt->execute()) {
+            return true;
+        }
+
+        print_r($this->conn->errorInfo());
+        print_r($stmt->errorInfo());
+
+        return $stmt;
+    }
+
 }

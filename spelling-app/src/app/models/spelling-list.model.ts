@@ -3,7 +3,9 @@ export class SpellingList {
     name: string;
     studentid: string;
     createddate: Date;
+    studentname: string;
 
     // client-side only
     deleting = false;
+    removing = false;
 }
