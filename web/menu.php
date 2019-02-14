@@ -47,7 +47,7 @@
                 </div>
             </div>
         </a>
-        <a href="/project1/app" class="menu-item">
+        <a href="/project1/app/" class="menu-item">
             <div class="flex-container">
                 <div class="flex-none"><i class="material-icons">chevron_right
                     </i></div>
