@@ -31,6 +31,9 @@ export class StudentsComponent implements OnInit {
     const ref = this.dialog.open(AddStudentComponent);
     ref.afterClosed().subscribe(results => {
       if (results) {
+        if(!this.students) {
+          this.students = [];
+        }
         this.students.push(results);
       }
     });
