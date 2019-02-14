@@ -21,7 +21,7 @@
 </div>
 
 <div class="container">
-  <div class="content-container">
+  <div class="content-container"  [class.entering]="enteringAnimation">
     <router-outlet (activate)="onActivate($event)" (deactivate)='onDeactivate($event)'></router-outlet>
   </div>
 

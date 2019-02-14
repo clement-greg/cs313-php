@@ -37,8 +37,6 @@ export class SpellingListsComponent implements OnInit {
           this._breadCrumbs.push(homeBreadcrumb);
         });
         this.apiService.getSpellingLists(this.studentId).subscribe(results => {
-          console.log('results:');
-          console.log(results);
           this.loading = false;
           if (results) {
             this.spellingLists = results.records;

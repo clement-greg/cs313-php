@@ -19,10 +19,11 @@ export class StudentsComponent implements OnInit {
 
     this.loading = true;
     this.apiService.getStudents().subscribe(students => {
-      console.log('students:');
-      console.log(students);
       this.loading = false;
       this.students = students.records;
+      if(!this.students) {
+        this.students = [];
+      }
     });
   }
 

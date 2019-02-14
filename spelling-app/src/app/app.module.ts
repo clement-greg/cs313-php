@@ -49,6 +49,7 @@ import { QuizComponent } from './pages/quiz/quiz.component';
 import { RatingComponent } from './components/rating.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { PubSubService } from './services/pub-sub.service';
+import { CongratsComponent } from './components/congrats/congrats.component';
 
 const appRoutes: Routes = [
   { path: '', component: StudentsComponent },
@@ -69,7 +70,8 @@ const appRoutes: Routes = [
     AddStudentComponent,
     AddListComponent,
     QuizComponent,
-    RatingComponent
+    RatingComponent,
+    CongratsComponent
   ],
   entryComponents: [
     AddStudentComponent,

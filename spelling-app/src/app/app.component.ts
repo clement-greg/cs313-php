@@ -9,10 +9,11 @@ import { PubSubService } from './services/pub-sub.service';
 })
 export class AppComponent {
   title = 'spelling-app';
+  enteringAnimation = false;
 
   breadcrumbComponent: any;
 
-  constructor(private pubSub: PubSubService) {
+  constructor(private pubSub: PubSubService, private router: Router) {
 
     pubSub.published.subscribe(event => {
       if (event.eventName = 'navigation-started') {
@@ -20,15 +21,27 @@ export class AppComponent {
       }
     });
 
+    this.router.events.subscribe(event => {
+      if (!(event instanceof NavigationEnd)) {
+        return;
+      }
+
+      const myEvent: any = event;
+      if (myEvent && myEvent.url && myEvent.url.indexOf('#') === -1) {
+        // this.enteringAnimation = true;
+      }
+
+      // setTimeout(() => this.enteringAnimation = false, 750);
+    });
+
   }
 
   onActivate(data: any) {
-    if(data.breadcrumbs) {
+    if (data.breadcrumbs) {
       this.breadcrumbComponent = data;
     } else {
       this.breadcrumbComponent = null;
     }
-
   }
 
   onDeactivate(data: any) {

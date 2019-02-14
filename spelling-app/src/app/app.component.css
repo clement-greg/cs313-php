@@ -26,6 +26,21 @@
     padding: 30px;
 }
 
+@keyframes slide-down {
+    from {
+      transform: translateY(-5%) scale(.85);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+.entering {
+    animation: slide-down .5s ease-out;
+  }
+
 .title-bar {
     width: 100%;
     max-width: 1200px;

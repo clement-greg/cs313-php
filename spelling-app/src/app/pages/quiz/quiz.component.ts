@@ -133,7 +133,6 @@ export class QuizComponent implements OnInit {
       this.selectedIndex++;
 
     });
-    console.log($data);
-    console.log(word);
+
   }
 }

@@ -10,11 +10,18 @@ Here is the link for the API layer (in PHP): https://github.com/clement-greg/cs3
 
 
 3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+CRUD operations completed for students, spelling lists, spelling words and scores
+Quiz feature is completed
+Breadcrumbs have been created for better navigation
+
+*** Feel free to modify anything in the application (add/delete students, lists words scores), it is all test data ***
 
 
 4. Briefly describe any pieces of the assignment that are not yet working correctly.
 I want the application to call a service that will retrieve dictionary definitions and present those definitions to the user.
 I also want to use the browser text-to-speech API to allow the app to "Read" the word.
+For some reason the application is redirecting from https to http, I think it has something to do with my .htaccess file.  I would like to 
+fix it so that it doesn't redirect to http.
 
 
 5. Briefly describe the "coolest" thing you learned while completing this assignment.

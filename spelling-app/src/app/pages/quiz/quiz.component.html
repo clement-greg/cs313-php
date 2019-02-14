@@ -72,7 +72,8 @@
 
   <mat-tab *ngIf="wordsLoaded">
     <div style="text-align: center" *ngIf="spellingWords && selectedIndex == spellingWords.length">
-      <img src="assets/congrats.svg">
+      <!-- <img src="assets/congrats.svg"> -->
+      <app-congrats></app-congrats>
     </div>
     <h1>You've Reached the end</h1>
 
