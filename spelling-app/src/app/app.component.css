@@ -79,11 +79,11 @@
 
 .hvr-underline-from-center:hover {
     background-color: transparent;
-    color: #17469c !important;
+    color: rgb(175,175,175) !important;
 }
 
 .hvr-underline-from-center:hover i {
-    color: #17469c !important;
+    color: rgb(175,175,175) !important;
 }
 
 
@@ -94,7 +94,7 @@
     height: 2px;
     bottom: 6px;
     left: 10px;
-    background-color: #17469c;
+    background-color: rgb(175,175,175);
     visibility: hidden;
     -webkit-transform: scaleX(0);
     -moz-transform: scaleX(0);
