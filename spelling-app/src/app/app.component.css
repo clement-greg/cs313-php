@@ -117,10 +117,3 @@
     transform: scaleX(1);
 }
 
-.mat-form-field-label {
-    color: rgb(175,175,175) !important;
-}
-
-.mat-form-field.mat-focused .mat-form-field-ripple {
-    background-color: rgb(175,175,175) !important;
-}

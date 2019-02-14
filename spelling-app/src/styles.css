@@ -213,3 +213,11 @@ mat-tab-group.no-tabs mat-tab-header {
 .top-margin-10 {
   margin-top: 10px;
 }
+
+.mat-form-field-label {
+  color: rgb(175,175,175) !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: rgb(175,175,175) !important;
+}
