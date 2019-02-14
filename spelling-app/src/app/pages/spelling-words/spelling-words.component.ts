@@ -87,9 +87,11 @@ export class SpellingWordsComponent implements OnInit {
     const word = new SpellingWord();
     word.spellinglistid = this.spellingListId;
     word.id = Utilities.newid();
+    word.doremove = false;
     word.word = this.newWord;
     word.createddate = new Date();
     this.apiService.saveSpellingWord(word).subscribe(() => {
+      word.doremove = false;
       this.spellingWords.push(word);
       this.newWord = '';
       this.adding = false;
