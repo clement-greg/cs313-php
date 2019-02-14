@@ -29,8 +29,8 @@
     <div class="flex-container">
       <div class="word">{{word.word}}</div>
       <div class="flex-none">
-        <button mat-button (click)="removeWord(word)" [disabled]="word.removing" >
-          <mat-spinner class="twenth" *ngIf="word.removing"></mat-spinner>
+        <button mat-button class="remove-button" (click)="removeWord(word)" [disabled]="word.removing" >
+          <mat-spinner class="twenty" *ngIf="word.removing"></mat-spinner>
           <span *ngIf="!word.removing">X</span>
         </button>
       </div>
