@@ -6,3 +6,7 @@ RewriteEngine On
     RewriteRule ^ - [L]
     # If the requested resource doesn't exist, use index.html
 RewriteRule ^ /project1/app/index.html
+
+RewriteEngine On
+    RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
