@@ -25,9 +25,9 @@
   </form>
 
 
-  <div mat-button class="select-button" [class.slideOutLeft]="word.doremove" *ngFor="let word of spellingWords">
+  <div mat-button class="select-button-word" [class.slideOutLeft]="word.doremove" *ngFor="let word of spellingWords">
     <div class="flex-container">
-      <div>{{word.word}}</div>
+      <div class="word">{{word.word}}</div>
       <div class="flex-none">
         <button mat-button (click)="removeWord(word)" [disabled]="word.removing" >
           <mat-spinner class="twenth" *ngIf="word.removing"></mat-spinner>

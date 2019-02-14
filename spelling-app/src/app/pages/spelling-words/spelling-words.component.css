@@ -1,0 +1,27 @@
+.select-button-word {
+    width: 100%!important;
+    display: block!important;
+    margin-right: 20px!important;
+    margin-bottom: 20px!important;
+    padding-top: 10px!important;
+    vertical-align: top!important;
+    background-color: transparent!important;
+    color: #fff!important;
+    text-align: left!important;
+    max-width: 650px!important;
+    border-radius: 0!important;
+    border-bottom: 1px dotted #fff!important;
+    display: inline-block !important;
+    width: 26% !important;
+    border: none;
+    background-color: rgba(0,0,0,.1) !important;
+    border-bottom: none !important;
+    border-radius: 5px !important;
+    padding: 11px;
+    /* vertical-align: middle !important; */
+}
+
+.word {
+    margin-top: 10px;
+    font-size: 12px;
+}
