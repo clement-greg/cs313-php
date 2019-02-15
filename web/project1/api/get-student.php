@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if($_SESSION[$_GET["id"]] != null) {
+    echo json_encode($_SESSION[$_GET["id"]]);
+    return;
+}
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -30,6 +36,7 @@ if($num>0){
  
         array_push($results["records"], $result);
     }
+    $_SESSION[$_GET["id"]] = $results;
     http_response_code(200);
     echo json_encode($results);
 }
