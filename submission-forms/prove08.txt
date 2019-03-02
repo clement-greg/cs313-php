@@ -1,0 +1,26 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+0. Don't forget to also upload your javascript file to the assignment dropbox in I-Learn.
+
+1. Briefly describe any pieces of the assignment that are not yet working correctly.
+Everything should be working
+
+2. Briefly describe the "coolest" thing you learned while completing this assignment.
+It was fun writing JavaScript running on the server.  I have done a lot of JavaScript in the browser, but not much node.js
+
+3. Describe anything you did to go above and beyond with this assignment.
+I create and endpoint that would connect to my PostGres database and return data.
+
+4. Please select the category you feel best describes your assignment:
+1 - Some attempt was made
+2 - Developing, but significantly deficient
+3 - Slightly deficient, but still mostly adequate
+4 - Meets requirements
+5 - Shows creativity and excels above and beyond requirements
+5
+
+
+5. Provide a brief justification (1-2 sentences) for selecting that category.
+I did more than just meet the basic requirements.
+
+

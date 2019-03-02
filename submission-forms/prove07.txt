@@ -14,11 +14,15 @@ Here is the link for the API layer (in PHP): https://github.com/clement-greg/cs3
 
 
 4. A link to the SQL file that contains the commands used to create your tables (e.g. a link to the myDb.sql file at GitHub, or something similar).
-
+https://github.com/clement-greg/cs313-php/blob/master/web/project1/database/myDb.sql
 
 
 5. Please provide a brief description of what your project does and how to use the application. Make sure to include any required information like a username and password.
-
+On the first page, you either select an existing student, or you create a new student.  Once a student has been selected, the app will display a list of spelling lists
+associated with that student.  You can also create a new spelling list.  Once a spelling list has been selected, the app will display the spelling words that are 
+associated with the current spelling list.  You can add/remove spelling words to the list.  There is also a "Take Quiz" button that will run through the words in the 
+spelling list one-by-one allowing the person administering the quiz to rate how well the student was able to spell the word. It also give an option to read the word aloud 
+using the browser's text-to-speech API and will also call a service to get the definition of the word.
 
 6. Briefly describe any pieces of the assignment that are not yet working correctly.
 I completed everything I had set out to do.
@@ -63,5 +67,6 @@ Criteria
 4 9. Overall project evaluation.
 
 10. Finally, please provide an overall description/justification of the categories you selected.
-
+It is a small app that is relatively simple in its scope, but I feel like it was solidly created and could actually be used by a parent to help
+quiz their children on spelling words.  
 
